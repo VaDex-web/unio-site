@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Унио — вся учёба в ДГТУ в одном приложении</title>
+<meta name="description" content="Расписание, оценки, справки, дедлайны СКИФ и 3D-карта корпусов ДГТУ в одном приложении. Сделали студенты.">
+<meta name="theme-color" content="#6A4BF0">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#">
+    <img src="mark.svg" alt="" width="36" height="36">
+    <span>Унио</span>
+  </a>
+  <nav class="top-nav" aria-label="Разделы">
+    <a href="#features">Возможности</a>
+    <a href="#map-plate">Карта</a>
+    <a href="#privacy">Данные</a>
+  </nav>
+  <a class="top-btn" href="https://t.me/DSTU_Neuron">Попасть в бету</a>
+</header>
+
+<main>
+
+<!-- Первый экран: фиолетовая плашка и телефон с живым расписанием -->
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Вся учёба в ДГТУ — в одном приложении</h1>
+    <p>Открыли Унио — и сразу видно, какая сейчас пара, в какой аудитории и сколько до звонка. Оценки, справки и дедлайны тут же, без личного кабинета в браузере.</p>
+    <div class="hero-actions">
+      <a class="btn btn-white" href="https://t.me/DSTU_Neuron">Попасть в бету</a>
+      <span class="hero-soon">App Store и Google Play — уже скоро</span>
+    </div>
+  </div>
+
+  <div class="hero-phone">
+    <div class="phone" aria-label="Экран «Сегодня» в приложении">
+      <div class="phone-screen">
+       <div class="ph-pages" id="ph-pages" data-page="0">
+        <div class="ph-page" aria-label="Сегодня">
+        <p class="ph-date" id="ph-date">Среда, 11 ноября</p>
+        <p class="ph-title">Сегодня</p>
+
+        <div class="ph-now">
+          <p class="ph-now-label" id="ph-now-label">Идёт пара</p>
+          <p class="ph-now-subject" id="ph-now-subject">Математический анализ</p>
+          <p class="ph-now-room" id="ph-now-room">Ауд. 8-322 · Лекция</p>
+          <div class="ph-now-bottom">
+            <p class="ph-count"><span id="ph-count">29</span> <span id="ph-count-unit">мин</span></p>
+            <p class="ph-count-note" id="ph-count-note">до звонка</p>
+          </div>
+          <div class="ph-bar"><span id="ph-bar"></span></div>
+        </div>
+
+        <ol class="ph-list" id="ph-list"></ol>
+        </div>
+
+        <div class="ph-page" aria-label="Оценки">
+          <p class="ph-date">Осенний семестр</p>
+          <p class="ph-title">Оценки</p>
+          <ul class="ph-grades">
+            <li><span>Математический анализ</span><b>42</b><i style="--v:.84"></i></li>
+            <li><span>Физика</span><b>31</b><i style="--v:.62"></i></li>
+            <li><span>Программирование</span><b>48</b><i style="--v:.96"></i></li>
+            <li><span>Английский язык</span><b>39</b><i style="--v:.78"></i></li>
+            <li><span>История России</span><b>27</b><i style="--v:.54"></i></li>
+          </ul>
+        </div>
+
+        <div class="ph-page" aria-label="Меню">
+          <p class="ph-date">Сервисы ДГТУ</p>
+          <p class="ph-title">Меню</p>
+          <ul class="ph-menu">
+            <li><b>Справки</b><span>Заказать и забрать</span></li>
+            <li><b>Общежитие</b><span>Конкурсы и заселение</span></li>
+            <li><b>Воинский учёт</b><span>Анкета и отсрочка</span></li>
+            <li><b>Медосмотр</b><span>Врачи и кабинеты</span></li>
+            <li><b>Вася</b><span>Спросить что угодно</span></li>
+            <li><b>Элективы</b><span>Выбор дисциплин</span></li>
+          </ul>
+        </div>
+       </div>
+      </div>
+      <nav class="ph-tabs" aria-label="Вкладки приложения">
+        <button type="button" class="on" data-page="0" aria-pressed="true">Сегодня</button>
+        <button type="button" data-page="1" aria-pressed="false">Оценки</button>
+        <button type="button" data-page="2" aria-pressed="false">Меню</button>
+      </nav>
+    </div>
+    <p class="phone-hint">Нажмите на вкладки внизу телефона</p>
+
+    <p class="chip chip-a"><b>Справка готова</b>Можно забрать в 1-452</p>
+    <p class="chip chip-b"><b>Тест СКИФ</b>Закроется завтра в 23:59</p>
+  </div>
+</section>
+
+<!-- Плашки возможностей -->
+<section class="features" id="features" aria-labelledby="features-title">
+  <h2 id="features-title">Всё, за чем раньше ходили по пяти сайтам</h2>
+
+  <div class="bento">
+
+    <article data-reveal class="plate plate-mint plate-wide">
+      <div class="plate-copy">
+        <h3>Справку больше не надо караулить</h3>
+        <p>Заказываете прямо в приложении: об обучении, в военкомат, для стипендии. Когда её подготовят, придёт уведомление.</p>
+      </div>
+      <div class="mini mini-cert">
+        <div class="cert-list" id="cert-list" aria-live="polite">
+          <div class="cert-row">
+            <span>Справка об обучении</span>
+            <em class="tag tag-ok">Готова</em>
+          </div>
+          <div class="cert-row">
+            <span>Справка в военкомат</span>
+            <em class="tag">Заказана</em>
+          </div>
+        </div>
+        <button class="mini-btn" id="cert-btn" type="button">Заказать справку</button>
+      </div>
+    </article>
+
+    <article data-reveal class="plate plate-lilac">
+      <h3>Баллы видно сразу</h3>
+      <p>Контрольные точки, пропуски и портфолио — по каждому предмету.</p>
+      <div class="mini mini-grades" id="grades">
+        <button class="grade" type="button" data-max="50" data-score="42"><span>Матанализ</span><b>0</b><i style="--v:.84"></i><small>КТ1 — 20, КТ2 — 22 из 25</small></button>
+        <button class="grade" type="button" data-max="50" data-score="31"><span>Физика</span><b>0</b><i style="--v:.62"></i><small>Нужно ещё 9 баллов до зачёта</small></button>
+        <button class="grade" type="button" data-max="50" data-score="48"><span>Программирование</span><b>0</b><i style="--v:.96"></i><small>Почти максимум — так держать</small></button>
+      </div>
+    </article>
+
+    <article data-reveal class="plate plate-navy">
+      <h3>Тесты СКИФ не проспите</h3>
+      <p>Задания и онлайн-тесты в одном списке. Напомним за день и за час.</p>
+      <div class="mini mini-push" id="pushes" aria-hidden="true"></div>
+    </article>
+
+    <article data-reveal class="plate plate-map plate-wide" id="map-plate">
+      <div class="plate-copy">
+        <h3>8 корпус больше не лабиринт</h3>
+        <p>Нажали на аудиторию в расписании — Унио ведёт по этажам. Это настоящая карта из приложения: сейчас она показывает путь от входа до 8-322.</p>
+        <button class="btn btn-small" id="map-toggle" type="button" aria-pressed="false">Покрутить корпуса</button>
+      </div>
+      <div class="map" id="map">
+        <iframe src="map/index.html" title="3D-карта корпусов ДГТУ" tabindex="-1"></iframe>
+        <p class="map-fail">Карта не загрузилась. <span class="file-hint">Откройте сайт через сервер, а не двойным кликом по файлу.</span><span class="net-hint">Обновите страницу.</span></p>
+      </div>
+    </article>
+
+    <article data-reveal class="plate plate-blue">
+      <h3>Вася подскажет</h3>
+      <p>Где поесть, как оформить академ, во сколько звонок. Отвечает по документам вуза.</p>
+      <div class="mini mini-chat">
+        <div class="chat" id="chat" aria-live="polite">
+          <p class="bubble">Привет! Я Вася. Спросите что-нибудь про ДГТУ.</p>
+        </div>
+        <div class="asks" id="asks">
+          <button type="button" data-q="0">Где поесть?</button>
+          <button type="button" data-q="1">Во сколько звонок?</button>
+          <button type="button" data-q="2">Где библиотека?</button>
+          <button type="button" data-q="3">Где студофис?</button>
+        </div>
+      </div>
+    </article>
+
+    <article data-reveal class="plate plate-white">
+      <h3>Общежитие и военкомат</h3>
+      <p>Конкурсы на заселение, ваш номер общежития и состояние анкеты воинского учёта. Рядом — адреса и телефоны нужных отделов.</p>
+    </article>
+
+    <article data-reveal class="plate plate-white">
+      <h3>И ещё</h3>
+      <ul class="also">
+        <li>виджет со следующей парой на iPhone</li>
+        <li>где сейчас преподаватель</li>
+        <li>свободные аудитории</li>
+        <li>медосмотр и элективы</li>
+        <li>конспекты с фото</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- Языки -->
+<section class="langs" aria-label="Языки интерфейса">
+  <p class="langs-title">Говорит на пяти языках — нажмите на любой</p>
+  <div class="langs-row" id="langs">
+    <button type="button" class="on" data-lang="ru">Русский</button>
+    <button type="button" data-lang="en" lang="en">English</button>
+    <button type="button" data-lang="zh" lang="zh">中文</button>
+    <button type="button" data-lang="ar" lang="ar">العربية</button>
+    <button type="button" data-lang="fr" lang="fr">Français</button>
+  </div>
+  <p class="langs-say" id="langs-say" aria-live="polite">Вся учёба в ДГТУ — в одном приложении</p>
+</section>
+
+<!-- Данные -->
+<section class="privacy" id="privacy" aria-labelledby="privacy-title">
+  <div data-reveal class="privacy-plate">
+    <h2 id="privacy-title">Ваши оценки видите только вы</h2>
+    <div class="privacy-cols">
+      <p>У нас нет своих серверов, рекламы и аналитики. Унио берёт расписание и оценки прямо с сайтов ДГТУ под вашей учётной записью и хранит их только на телефоне.</p>
+      <p>Логин и пароль уходят только в вуз. Захотите начать с чистого листа — в разделе «О приложении» всё стирается одной кнопкой.</p>
+    </div>
+    <a class="privacy-link" href="privacy/">Политика конфиденциальности</a>
+  </div>
+</section>
+
+<!-- Финал -->
+<section class="cta" aria-labelledby="cta-title">
+  <div data-reveal class="cta-plate">
+    <img src="mark.svg" alt="" width="72" height="72">
+    <h2 id="cta-title">Хотите попробовать первыми?</h2>
+    <p>Сейчас Унио в закрытой бете. Подписывайтесь на канал — там ссылки на установку и все новости.</p>
+    <a class="btn btn-white" href="https://t.me/DSTU_Neuron">Открыть канал в Телеграме</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p>Унио делают студенты ДГТУ. Приложение неофициальное: университет его не выпускает и за него не отвечает.</p>
+  <p>Нашли ошибку или есть идея — пишите <a href="https://t.me/DSTU_Unio_bot">@DSTU_Unio_bot</a>.</p>
+  <nav class="foot-links" aria-label="Ссылки">
+    <a href="https://t.me/DSTU_Neuron">Телеграм-канал</a>
+    <a href="privacy/">Конфиденциальность</a>
+  </nav>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Карта корпусов</title>
+<style>
+  :root { --sky-a: #E3E8EE; --sky-b: #CDD5DE; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: var(--sky-b);
+    -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+  body { background: radial-gradient(120% 90% at 50% 20%, var(--sky-a), var(--sky-b)); }
+  canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; touch-action: none;
+    opacity: 0; transition: opacity .7s ease; }
+  body.ready canvas { opacity: 1; }
+</style>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<script>
+  // Ошибки страницы доходят до приложения, а не теряются внутри WebView.
+  function report(message) {
+    try { window.Nav && window.Nav.postMessage(JSON.stringify({ type: 'error', message: String(message) })); } catch (e) {}
+  }
+  window.addEventListener('error', function (e) { report(e.message + ' @' + (e.filename || '').split('/').pop() + ':' + e.lineno); });
+  window.addEventListener('unhandledrejection', function (e) { report(e.reason && (e.reason.message || e.reason)); });
+</script>
+<script src="app.js"></script>
+</body>
+</html>

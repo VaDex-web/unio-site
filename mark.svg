@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+<stop offset="0" stop-color="#161b2e"/><stop offset="1" stop-color="#090c14"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.3" cy="0.25" r="0.7">
+<stop offset="0" stop-color="#2a1f5c" stop-opacity="0.55"/><stop offset="1" stop-color="#2a1f5c" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="u" gradientUnits="userSpaceOnUse" x1="147" y1="140" x2="380" y2="250">
+<stop offset="0" stop-color="#9159F2"/><stop offset="0.5" stop-color="#5C74F4"/><stop offset="1" stop-color="#7AF0C8"/>
+</linearGradient>
+<linearGradient id="c" gradientUnits="userSpaceOnUse" x1="232" y1="92" x2="296" y2="150">
+<stop offset="0" stop-color="#8A66F5"/><stop offset="1" stop-color="#5A8CF6"/>
+</linearGradient>
+</defs>
+<g transform="translate(512 512) scale(2.746) translate(-263.5 -195)">
+<circle cx="264" cy="121" r="32" fill="url(#c)"/>
+<path fill="url(#u)" d="M147 184.5 V134 Q147 116 163 120 C190 128 209 148 211 170 V184.5 A52.5 52.5 0 0 0 316 184.5 V170 C318 148 337 128 364 120 Q380 116 380 134 V184.5 A116.5 116.5 0 0 1 147 184.5 Z"/>
+</g>
+</svg>
